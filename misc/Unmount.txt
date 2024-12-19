@@ -1,0 +1,3 @@
+select disk 0
+select partition 6
+remove letter=X

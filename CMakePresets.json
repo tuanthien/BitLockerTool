@@ -1,0 +1,57 @@
+{
+    "version": 8,
+    "configurePresets": [
+      {
+        "name": "windows_debug",
+        "displayName": "Windows x64 Debug",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/_out/${presetName}",
+        "cacheVariables": {
+          "CMAKE_VERBOSE_MAKEFILE": "ON",
+          "CMAKE_BUILD_TYPE":"Debug",
+          "CMAKE_CXX_COMPILER": "cl.exe",
+          "CMAKE_C_COMPILER": "cl.exe",
+          "CMAKE_INSTALL_PREFIX": "${sourceDir}/_install/${presetName}",
+          "CMAKE_MAKE_PROGRAM": "E:/Tools/ninja.exe",
+          "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+          "CPM_SOURCE_CACHE": "E:/Cache/CPM",
+          "BLT_WINAPI_VERSION": "0x0A00000A"
+        },
+        "architecture": {
+            "strategy": "external",
+            "value": "x64"
+        },
+        "condition": {
+          "type": "equals",
+          "lhs": "${hostSystemName}",
+          "rhs": "Windows"
+        }
+      },
+      {
+        "name": "windows_release",
+        "displayName": "Windows x64 Release",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/_out/${presetName}",
+        "cacheVariables": {
+          "CMAKE_VERBOSE_MAKEFILE": "ON",
+          "CMAKE_BUILD_TYPE":"Release",
+          "CMAKE_CXX_COMPILER": "cl.exe",
+          "CMAKE_C_COMPILER": "cl.exe",
+          "CMAKE_INSTALL_PREFIX": "${sourceDir}/_install/${presetName}",
+          "CMAKE_MAKE_PROGRAM": "E:/Tools/ninja.exe",
+          "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+          "CPM_SOURCE_CACHE": "E:/Cache/CPM",
+          "BLT_WINAPI_VERSION": "0x0A00000A"
+        },
+        "architecture": {
+            "strategy": "external",
+            "value": "x64"
+        },
+        "condition": {
+          "type": "equals",
+          "lhs": "${hostSystemName}",
+          "rhs": "Windows"
+        }
+      }
+    ]
+  }
